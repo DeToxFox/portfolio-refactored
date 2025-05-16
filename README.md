@@ -8,7 +8,7 @@ This is a modern portfolio site built with [Vite](https://vitejs.dev/), [React](
 - ⚛️ React (JavaScript)
 - :art: Tailwind CSS (v4)
 - :wrench: PostCSS (with ESM support)
-- :cloud: Delpoyed via [Netlify](https://www.netlify.com/)
+- :cloud: Deployed via [Netlify](https://www.netlify.com/)
 
 ## :file_folder: Setup Instructions that were followed
 
@@ -30,7 +30,7 @@ npm install
 
 Tailwind CSS v4 is configured manually using ESM modules:
 ```bash
-npm install -D @tailwindcss/postcss
+npm install -D tailwindcss postcss autoprefixer @tailwindcss/postcss
 ```
 touch postcss.config.js
 ```bash
