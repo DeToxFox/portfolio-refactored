@@ -1,18 +1,31 @@
+// Save the icon-enhanced ThemeToggle.jsx into the appropriate structure for the user
+
+import { useEffect, useState } from 'react';
 import toggleTheme from '../utils/toggleTheme';
 
 const ThemeToggle = () => {
+  const [isDark, setIsDark] = useState(false);
+
+  useEffect(() => {
+    const theme = localStorage.getItem('theme') === 'dark' ||
+      (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches);
+    setIsDark(theme);
+  }, []);
+
+  const handleToggle = () => {
+    toggleTheme();
+    setIsDark(prev => !prev);
+  };
+
   return (
     <button
-      onClick={toggleTheme}
-      className="px-4 py-2 bg-gray-200 dark:bg-gray-700 text-black dark:text-white rounded transition-colors"
+      onClick={handleToggle}
+      className="p-2 text-2xl transition-colors bg-gray-200 rounded dark:bg-gray-800 dark:text-white hover:bg-gray-300 dark:hover:bg-gray-700"
+      aria-label="Toggle theme"
     >
-      Toggle Theme
+      {isDark ? '☀️ Light Mode' : '🌙 Dark Mode'}
     </button>
   );
 };
 
 export default ThemeToggle;
-// This component can be used anywhere in your app to toggle the theme.
-// For example, you can place it in your App component or in a header.
-// import it in your App.jsx or any other component where you want to use it
-// and include it like this: <ThemeToggle />
