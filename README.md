@@ -26,27 +26,29 @@ Then choose:
 npm install
 ```
 
-### :hammer_and_wrench: Tailwind Setup
+### :hammer_and_wrench: Tailwind Setup (v3) [(using v4? → click here)](#hammer_and_wrench-tailwind-setup-for-users-with-v4)
 
-Tailwind CSS v4 is configured manually using ESM modules:
+Tailwind CSS v3 is configured using ESM-style modules to align with Vite’s setup:
 ```bash
-npm install -D tailwindcss postcss autoprefixer @tailwindcss/postcss
+npm install -D tailwindcss@3.4.3 postcss autoprefixer
 ```
 touch postcss.config.js
 ```bash
-import tailwindcssPostcss from '@tailwindcss/postcss';
-import autoprefixer from 'autoprefixer';
-
 export default {
-  plugins: [tailwindcssPostcss(), autoprefixer()],
-}
+  plugins: {
+    tailwindcss: {},
+    autoprefixer: {},
+  },
+};
 ```
 touch tailwind.config.js
 ```bash
+/** @type {import('tailwindcss').Config} */
 export default {
+  darkMode: 'class', // or 'class' for toggle support
   content: [
-    './index.html',
-    './src/**/*.{js,ts,jsx,tsx}',
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}"
   ],
   theme: {
     extend: {},
@@ -66,9 +68,11 @@ npm run dev
 
 ## :brain: Features
 - Responsive layout
+- System and manual dark mode toggle
+- Modular component structure
 - Fast build times with Vite
 - Utility-first styling via Tailwind
-- Modular component structure
+
 
 ## :globe_with_meridians: Live Demo
 :point_right: https://www.SomeLinkHere.com
@@ -77,3 +81,21 @@ npm run dev
 - My LinkedIn
 - My GitHub
 - Email: davidbrockturner@outlook.com
+
+### :hammer_and_wrench: Tailwind Setup for users with v4
+
+Tailwind v4 separates the PostCSS plugin into @tailwindcss/postcss, which requires additional configuration. If you're upgrading from v3:
+
+```bash
+npm install -D tailwindcss@latest postcss autoprefixer @tailwindcss/postcss
+```
+Update postcss.config.js
+```bash
+import tailwindcssPostcss from '@tailwindcss/postcss';
+import autoprefixer from 'autoprefixer';
+
+export default {
+  plugins: [tailwindcssPostcss(), autoprefixer()],
+};
+```
+NOTE: Vite and Tailwind v4 may require ESM compatibility and a working Vite plugin configuration to avoid runtime build errors.
