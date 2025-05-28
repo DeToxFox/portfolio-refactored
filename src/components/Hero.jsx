@@ -1,11 +1,13 @@
 const Hero = () => {
   return (
-    <section className="min-h-screen flex items-center justify-center bg-white text-black dark:bg-black dark:text-white transition-colors duration-500">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold">Dark Mode Test</h1>
-        <p className="mt-4 text-lg">This should be white on black when in dark mode.</p>
-      </div>
-    </section>
+    <div id="top">
+      <section className="min-h-screen flex items-center justify-center bg-white text-black dark:bg-black dark:text-white transition-colors duration-500">
+        <div className="text-center">
+          <h1 className="text-4xl font-bold">Dark Mode Test</h1>
+          <p className="mt-4 text-lg">This should be white on black when in dark mode.</p>
+        </div>
+      </section>
+    </div>
   );
 };
 

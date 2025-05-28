@@ -1,9 +1,11 @@
 import ThemeToggle from './components/ThemeToggle';
 import Hero from './components/Hero';
+import Navbar from './components/Navbar';
 
 function App() {
   return (
     <>
+      <Navbar />
       <ThemeToggle />
       <Hero />
     </>
