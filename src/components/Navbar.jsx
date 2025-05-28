@@ -12,8 +12,8 @@ const Navbar = () => {
             className="h-24 w-24 object-contain"
           />
           <div className="text-center md:text-left">
-            <p className="text-lg font-bold text-black dark:text-white">David Turner, CET</p>
-            <p className="text-sm text-gray-700 dark:text-gray-300">
+            <p className="text-xl font-bold text-black dark:text-white">David Turner, CET</p>
+            <p className="text-lg text-gray-700 dark:text-gray-300">
               Full Stack Developer | Business Analyst
             </p>
           </div>
