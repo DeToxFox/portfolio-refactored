@@ -1,34 +1,27 @@
+import React from 'react';
+
 const Navbar = () => {
   return (
-    <header className="sticky top-0 z-50 bg-white dark:bg-gray-900 shadow-md transition-colors duration-300">
-      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
-        {/* Logo and Name */}
-        <div className="flex items-center space-x-2">
-          {/* Placeholder for logo */}
-          <div className="w-8 h-8 bg-blue-500 rounded-full" />
-          <span className="text-xl font-bold text-gray-900 dark:text-white">
+    <header className="sticky top-0 z-50 bg-white dark:bg-black shadow-md transition-colors duration-500">
+      <nav className="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+        <div className="flex items-center space-x-3">
+          {/* Placeholder Logo */}
+          <img src="/src/assets/PurpleMonkey.jpg" alt="Logo" className="h-8 w-8" />
+          <span className="text-xl font-semibold text-black dark:text-white">
             David Turner
           </span>
         </div>
-
-        {/* Navigation Links */}
-        <div className="space-x-6">
-          <a href="#top" className="text-gray-800 dark:text-gray-200 hover:underline">
-            Home
-          </a>
-          <a href="#projects" className="text-gray-800 dark:text-gray-200 hover:underline">
-            Projects
-          </a>
-          <a href="#contact" className="text-gray-800 dark:text-gray-200 hover:underline">
-            Contact
-          </a>
-        </div>
+        <ul className="flex space-x-6 text-black dark:text-white">
+          <li><a href="#top" className="hover:text-blue-600">Home</a></li>
+          <li><a href="#projects" className="hover:text-blue-600">Projects</a></li>
+          <li><a href="#contact" className="hover:text-blue-600">Contact</a></li>
+        </ul>
       </nav>
     </header>
   );
 };
 
 export default Navbar;
-// This Navbar component is a sticky header that contains the logo and navigation links.
-// It uses Tailwind CSS for styling and supports dark mode.
-// The logo is represented by a placeholder div, and the name "David Turner" is displayed next to it.
+// This is a simple Navbar component that includes a logo and navigation links.
+// It uses Tailwind CSS for styling and supports dark mode with a transition effect.
+// The Navbar is sticky at the top of the page and adapts its colors based on the theme.
