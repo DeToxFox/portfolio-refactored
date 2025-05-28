@@ -6,7 +6,7 @@ const Navbar = () => {
       <nav className="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
         <div className="flex items-center space-x-3">
           {/* Placeholder Logo */}
-          <img src="/src/assets/PurpleMonkey.jpg" alt="Logo" className="h-8 w-8" />
+          <img src="/src/assets/PurpleMonkey" alt="Logo" className="h-8 w-8" />
           <span className="text-xl font-semibold text-black dark:text-white">
             David Turner
           </span>
