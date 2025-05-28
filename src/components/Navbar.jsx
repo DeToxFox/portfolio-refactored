@@ -1,15 +1,22 @@
 import React from 'react';
+import logo from '../assets/PurpleMonkey.jpg'; // Adjust the path as necessary
 
 const Navbar = () => {
   return (
     <header className="sticky top-0 z-50 bg-white dark:bg-black shadow-md transition-colors duration-500">
-      <nav className="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+      <nav className="max-w-7xl mx-auto px-4 py-3 flex flex-col md:flex-row justify-between items-center space-y-3 md:space-y-0">
         <div className="flex items-center space-x-3">
-          {/* Placeholder Logo */}
-          <img src="/src/assets/PurpleMonkey" alt="Logo" className="h-8 w-8" />
-          <span className="text-xl font-semibold text-black dark:text-white">
-            David Turner
-          </span>
+          <img
+            src={logo}
+            alt="Logo"
+            className="h-24 w-24 object-contain"
+          />
+          <div className="text-center md:text-left">
+            <p className="text-lg font-bold text-black dark:text-white">David Turner, CET</p>
+            <p className="text-sm text-gray-700 dark:text-gray-300">
+              Full Stack Developer | Business Analyst
+            </p>
+          </div>
         </div>
         <ul className="flex space-x-6 text-black dark:text-white">
           <li><a href="#top" className="hover:text-blue-600">Home</a></li>
@@ -22,6 +29,6 @@ const Navbar = () => {
 };
 
 export default Navbar;
-// This is a simple Navbar component that includes a logo and navigation links.
-// It uses Tailwind CSS for styling and supports dark mode with a transition effect.
-// The Navbar is sticky at the top of the page and adapts its colors based on the theme.
+// This Navbar component includes a logo, title, subtitle, and navigation links.
+// It uses Tailwind CSS for styling and supports dark mode.
+// The logo is imported from the assets folder, and the component is responsive.
