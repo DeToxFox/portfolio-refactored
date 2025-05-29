@@ -1,11 +1,19 @@
+import React from 'react';
+
 const Hero = () => {
   return (
-    <section id="top" className="min-h-screen flex items-center justify-center bg-white text-black dark:bg-black dark:text-white transition-colors duration-500 px-4">
-      <div className="text-center max-w-3xl">
-        <h1 className="text-5xl md:text-6xl font-bold mb-4">
-          David Turner
+    <section
+      id="top"
+      className="min-h-screen flex flex-col justify-center items-center text-center bg-white dark:bg-black text-black dark:text-white px-4 transition-colors duration-500"
+    >
+      <div className="max-w-3xl">
+        <h1 className="text-4xl md:text-5xl font-extrabold mb-4">
+          David Turner, CET
         </h1>
-        <div className="mt-6 flex justify-center space-x-4">
+        <p className="text-xl md:text-2xl mb-6">
+          Full Stack Developer | Business Analyst
+        </p>
+        <div className="flex flex-col sm:flex-row justify-center gap-4">
           <a
             href="#projects"
             className="px-6 py-3 bg-blue-600 text-white rounded hover:bg-blue-700 transition"
@@ -14,7 +22,7 @@ const Hero = () => {
           </a>
           <a
             href="#contact"
-            className="px-6 py-3 border border-gray-300 dark:border-gray-600 rounded text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 transition"
+            className="px-6 py-3 border border-gray-400 dark:border-gray-600 text-black dark:text-white rounded hover:bg-gray-100 dark:hover:bg-gray-800 transition"
           >
             Contact Me
           </a>

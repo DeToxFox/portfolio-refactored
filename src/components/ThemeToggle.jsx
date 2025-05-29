@@ -20,7 +20,7 @@ const ThemeToggle = () => {
   return (
     <button
       onClick={handleToggle}
-      className="p-2 text-2xl transition-colors bg-gray-200 rounded dark:bg-gray-800 dark:text-white hover:bg-gray-300 dark:hover:bg-gray-700"
+      className="p-2 text-1xl transition-colors bg-gray-200 rounded dark:bg-gray-800 dark:text-white hover:bg-gray-300 dark:hover:bg-gray-700"
       aria-label="Toggle theme"
     >
       {isDark ? '☀️ Light Mode' : '🌙 Dark Mode'}
