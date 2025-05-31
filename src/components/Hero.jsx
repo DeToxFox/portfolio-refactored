@@ -1,19 +1,15 @@
-import React from 'react';
-
 const Hero = () => {
   return (
     <section
       id="top"
-      className="min-h-screen flex flex-col justify-center items-center text-center bg-white dark:bg-black text-black dark:text-white px-4 transition-colors duration-500"
+      className="min-h-screen flex items-center justify-center px-4 py-20 bg-white text-black dark:bg-black dark:text-white transition-colors duration-500"
     >
-      <div className="max-w-3xl">
-        <h1 className="text-4xl md:text-5xl font-extrabold mb-4">
-          David Turner, CET
-        </h1>
-        <p className="text-xl md:text-2xl mb-6">
+      <div className="text-center max-w-2xl">
+        <h1 className="text-4xl md:text-6xl font-extrabold">David Turner, CET</h1>
+        <p className="mt-4 text-lg md:text-xl text-gray-700 dark:text-gray-300">
           Full Stack Developer | Business Analyst
         </p>
-        <div className="flex flex-col sm:flex-row justify-center gap-4">
+        <div className="mt-6 flex justify-center gap-4 flex-wrap">
           <a
             href="#projects"
             className="px-6 py-3 bg-blue-600 text-white rounded hover:bg-blue-700 transition"
@@ -22,7 +18,7 @@ const Hero = () => {
           </a>
           <a
             href="#contact"
-            className="px-6 py-3 border border-gray-400 dark:border-gray-600 text-black dark:text-white rounded hover:bg-gray-100 dark:hover:bg-gray-800 transition"
+            className="px-6 py-3 border border-gray-300 dark:border-gray-600 rounded text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 transition"
           >
             Contact Me
           </a>
