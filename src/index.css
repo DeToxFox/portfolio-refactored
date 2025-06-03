@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+html {scroll-behavior: smooth;} /* will make the page scroll smoothly to the anchor link */
+
 /* For testing purposes only, F12 --> Console --> Rendering --> Emulate CSS media feature prefers-color-scheme --> dropdown select prefers-color-scheme: dark
 @media (prefers-color-scheme: dark) {
   body {

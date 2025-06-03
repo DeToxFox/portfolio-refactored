@@ -5,7 +5,7 @@ import ThemeToggle from './ThemeToggle'; // Import the ThemeToggle component
 const Navbar = () => {
   return (
     <header className="sticky top-0 z-50 bg-white dark:bg-black shadow-md transition-colors duration-500">
-      <nav className="max-w-7xl mx-auto px-4 py-3 flex flex-col md:flex-row justify-between items-center space-y-3 md:space-y-0">
+      <nav className="max-w-7xl mx-auto px-4 py-1 flex flex-col md:flex-row justify-between items-center space-y-3 md:space-y-0">
         <div className="flex items-center space-x-3">
           {/* <img
             src={logo}
@@ -21,6 +21,7 @@ const Navbar = () => {
         </div>
         <ul className="flex items-center space-x-6 text-black dark:text-white">
           <li><a href="#top" className="hover:text-blue-600">Home</a></li>
+          <li><a href="#about" className="hover:text-blue-600">About Me</a></li>
           <li><a href="#projects" className="hover:text-blue-600">Projects</a></li>
           <li><a href="#contact" className="hover:text-blue-600">Contact</a></li>
           <li className="flex items-center"><ThemeToggle /></li>

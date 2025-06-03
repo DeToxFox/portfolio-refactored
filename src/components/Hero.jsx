@@ -2,8 +2,8 @@ const Hero = () => {
   return (
     <section
       id="top"
-      className="min-h-screen flex items-center justify-center px-4 py-20 bg-white text-black dark:bg-black dark:text-white transition-colors duration-500"
-    >
+      className="min-h-screen flex items-start justify-center px-4 py-20 bg-white text-black dark:bg-black dark:text-white transition-colors duration-500 scroll-mt-24"
+      >
       <div className="text-center max-w-2xl">
         <h1 className="text-4xl md:text-6xl font-extrabold">David Turner, CET</h1>
         <p className="mt-4 text-lg md:text-xl text-gray-700 dark:text-gray-300">

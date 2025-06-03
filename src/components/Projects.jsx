@@ -1,42 +1,83 @@
-import ProjectCard from './ProjectCard';
+import React from 'react';
+
+const projects = [
+  {
+    title: 'QR Code Resume Generator',
+    description: 'A backend utility that dynamically generates resumes and QR codes linking to your portfolio.',
+    tags: ['Node.js', 'Backend'],
+    github: 'https://github.com/DeToxFox/qr-resume-generator',
+    note: 'Backend only — UI planned for later',
+  },
+  {
+    title: 'Hair Salon Website',
+    description: 'Responsive site for a local hairstylist with booking integration. Based on Figma mockups.',
+    tags: ['React', 'Vite', 'Tailwind'],
+    github: '',
+    figma: 'https://www.figma.com/your-hair-site-preview',
+    note: 'In Progress',
+  },
+  {
+    title: 'Movie Finder API',
+    description:
+      'A full-stack movie search engine supporting PostgreSQL and MongoDB. Includes REST API and authentication.',
+    tags: ['Node.js', 'Express', 'PostgreSQL', 'MongoDB'],
+    github: 'https://github.com/DeToxFox/S3_MovieFinder_API_NodeJS',
+  },
+  {
+    title: 'Portfolio Website (Refactored)',
+    description:
+      'The site you’re viewing now! Built with Vite + React + Tailwind, deployed via Netlify.',
+    tags: ['React', 'Tailwind', 'Vite'],
+    github: 'https://github.com/DeToxFox/portfolio-refactored',
+    live: 'https://david-turner-portfolio.netlify.app/',
+  },
+];
 
 const Projects = () => {
-  const featuredProjects = [
-    {
-      title: 'Resume + QR Code Generator',
-      description: 'A utility to dynamically generate resumes and QR codes linking to your portfolio.',
-      tags: ['React', 'Tailwind', 'Node.js'],
-      github: 'https://github.com/DeToxFox/ResumeAndSocialQR',
-      live: '', // add live link if hosted
-    },
-    {
-      title: 'Hair Salon Website',
-      description: 'Responsive site for a local hairstylist with a booking integration.',
-      tags: ['React', 'Vite', 'Tailwind'],
-      github: '',
-      live: '', // Netlify or live site link
-    },
-    // Add more as needed
-  ];
-
   return (
-    <section id="projects" className="px-4 py-20 bg-gray-100 dark:bg-gray-900 transition-colors duration-300">
-      <div className="max-w-7xl mx-auto text-center mb-12">
-        <h2 className="text-3xl md:text-4xl font-bold text-black dark:text-white">Featured Projects</h2>
-        <p className="mt-4 text-gray-600 dark:text-gray-400">
-          A collection of personal and professional projects demonstrating my development experience.
+    <section id="projects" className="py-16 px-4 bg-gray-100 dark:bg-gray-900 text-black dark:text-white">
+      <div className="max-w-6xl mx-auto text-center">
+        <h2 className="text-4xl font-bold mb-4">Projects</h2>
+        <p className="mb-12 text-gray-700 dark:text-gray-300">
+          A collection of professional and personal projects demonstrating my development experience.
         </p>
-      </div>
-      <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto">
-        {featuredProjects.map((project, index) => (
-          <ProjectCard key={index} {...project} />
-        ))}
+
+        <div className="grid gap-8 md:grid-cols-2">
+          {projects.map((project, index) => (
+            <div key={index} className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow hover:shadow-lg transition">
+              <h3 className="text-2xl font-semibold mb-2">{project.title}</h3>
+              <p className="text-gray-600 dark:text-gray-300 mb-4">{project.description}</p>
+              <div className="flex flex-wrap gap-2 mb-3">
+                {project.tags.map((tag, i) => (
+                  <span key={i} className="bg-blue-600 text-white px-2 py-1 rounded text-sm">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+              {project.github && (
+                <a href={project.github} className="text-blue-500 hover:underline mr-4" target="_blank" rel="noopener noreferrer">
+                  GitHub
+                </a>
+              )}
+              {project.live && (
+                <a href={project.live} className="text-blue-500 hover:underline mr-4" target="_blank" rel="noopener noreferrer">
+                  Live Site
+                </a>
+              )}
+              {project.figma && (
+                <a href={project.figma} className="text-blue-500 hover:underline mr-4" target="_blank" rel="noopener noreferrer">
+                  Figma Preview
+                </a>
+              )}
+              {project.note && (
+                <p className="mt-2 text-sm italic text-yellow-500">{project.note}</p>
+              )}
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
 };
 
 export default Projects;
-// This component displays a list of featured projects using the ProjectCard component.
-// It includes a title, description, tags, and links to GitHub and live demos.
-// The projects are displayed in a responsive grid layout, adapting to different screen sizes.
