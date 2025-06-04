@@ -10,8 +10,3 @@ export default defineConfig({
     },
   },
 });
-
-
-// I like this "Prefer to reach out directly? Feel free to email me or view my resume below.
-// 📧 Send Email"
-// But more dynamic, like a popup where some one can select a copy icon then close the popup with a mouse click or something like that.
