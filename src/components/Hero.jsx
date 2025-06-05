@@ -1,27 +1,29 @@
+import React from "react";
+import myPhoto from "../assets/Pro-Headshot.jpeg";
+
 const Hero = () => {
   return (
     <section
-      id="top"
-      className="min-h-screen flex items-start justify-center px-4 py-20 bg-white text-black dark:bg-black dark:text-white transition-colors duration-500 scroll-mt-24"
-      >
-      <div className="text-center max-w-2xl">
-        <h1 className="text-4xl md:text-6xl font-extrabold">David Turner, CET</h1>
-        <p className="mt-4 text-lg md:text-xl text-gray-700 dark:text-gray-300">
-          Full Stack Developer | Business Analyst
-        </p>
-        <div className="mt-6 flex justify-center gap-4 flex-wrap">
-          <a
-            href="#projects"
-            className="px-6 py-3 bg-blue-600 text-white rounded hover:bg-blue-700 transition"
-          >
-            View Projects
-          </a>
-          <a
-            href="#contact"
-            className="px-6 py-3 border border-gray-300 dark:border-gray-600 rounded text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 transition"
-          >
-            Contact Me
-          </a>
+      id="home"
+      className="w-full min-h-screen flex items-center justify-center px-6 md:px-10 bg-gradient-to-b from-[#f8fbff] via-[#eef2f7] to-[#e3e7ed] dark:from-[#0a0a23] dark:via-[#121228] dark:to-[#1c1c3a] text-center md:text-left animate-fade-in"
+    >
+      <div className="max-w-6xl w-full flex flex-col md:flex-row items-center gap-10">
+        <div className="flex-1">
+          <h1 className="text-4xl md:text-5xl font-extrabold text-gray-800 dark:text-gray-100 mb-6 leading-tight">
+            Turning complex problems into{" "}
+            <span className="text-blue-600 dark:text-blue-400">clean solutions</span>
+          </h1>
+          <p className="text-lg md:text-xl text-gray-700 dark:text-gray-300">
+            I’m David Turner — a collaborative Full Stack Developer with a background in business
+            analysis, a passion for clean design, and a commitment to meaningful software.
+          </p>
+        </div>
+        <div className="flex-shrink-0">
+          <img
+            src={myPhoto}
+            alt="David Turner Headshot"
+            className="w-44 h-44 md:w-52 md:h-52 rounded-full object-cover shadow-xl transition-transform duration-300 hover:scale-105"
+          />
         </div>
       </div>
     </section>

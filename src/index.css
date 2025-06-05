@@ -1,13 +1,79 @@
+/* scroll-behavior: smooth; will make the page scroll smoothly to the anchor link */
+/* src/index.css */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-html {scroll-behavior: smooth;} /* will make the page scroll smoothly to the anchor link */
+/* ─── Smooth Anchor Scrolling ───────────────────────────────────────────────── */
+html {
+  scroll-behavior: smooth;
+}
 
-/* For testing purposes only, F12 --> Console --> Rendering --> Emulate CSS media feature prefers-color-scheme --> dropdown select prefers-color-scheme: dark
-@media (prefers-color-scheme: dark) {
-  body {
-    background-color: black !important;
-    color: pink !important;
+/* ─── Light-mode BODY Styles ─────────────────────────────────────────────────── */
+/* We apply text colors and a light gradient on <body> by default. */
+body {
+  @apply text-gray-800 dark:text-gray-100;
+  background: linear-gradient(to bottom, #eaf1f9, #f4f6fa, #ffffff);
+}
+
+/* ─── Dark-mode BODY Override ────────────────────────────────────────────────── */
+/* When <html> has class="dark", this selector ensures the entire BODY switches to the dark gradient. */
+.dark body {
+  background: linear-gradient(to bottom, #0a0f1f, #111827, #1f2937);
+}
+
+/* ─── This will stop Chrome from autofilling inputs with the wrong colors ─────────────────────────────────────────── */
+/* 🌞 Light Mode Autofill */
+input:-webkit-autofill,
+textarea:-webkit-autofill {
+  background-color: #ffffff !important;           /* Light input bg */
+  -webkit-box-shadow: 0 0 0px 1000px #ffffff inset !important;
+  -webkit-text-fill-color: #1f2937 !important;    /* text-gray-800 */
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+/* 🌚 Dark Mode Autofill */
+.dark input:-webkit-autofill,
+.dark textarea:-webkit-autofill {
+  background-color: #374151 !important;           /* dark:bg-gray-700 */
+  -webkit-box-shadow: 0 0 0px 1000px #374151 inset !important;
+  -webkit-text-fill-color: #d1d5db !important;     /* dark:text-gray-100 */
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+
+/* ─── Ensure <section> honors our scroll offset for anchor links ─────────────── */
+section {
+  @apply scroll-mt-16;
+}
+
+/* ─── Fade-in Keyframes for Section Entrances ───────────────────────────────── */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
   }
-} */
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-fade-in {
+  animation: fadeIn 1s ease-out both;
+}
+
+/* ─── Custom Gradient Utilities for “Light Mode” and “Dark Mode” ─────────────── */
+/* 1) Light-mode utility (applies the pale blue-to-white gradient). */
+.bg-light-mode-gradient {
+  background: linear-gradient(to bottom, #eaf1f9, #f4f6fa, #ffffff);
+}
+
+/* 
+ 2) Dark-mode utility:
+    Tailwind’s JIT generates a class named “dark:bg-dark-mode-gradient,” which at runtime is escaped to “dark\:bg-dark-mode-gradient.” 
+    In order for that to match correctly, we must target “.dark .dark\:bg-dark-mode-gradient” (not “.dark .bg-dark-mode-gradient”). 
+*/
+.dark .dark\:bg-dark-mode-gradient {
+  background: linear-gradient(to bottom, #0a0f1f, #111827, #1f2937);
+}
