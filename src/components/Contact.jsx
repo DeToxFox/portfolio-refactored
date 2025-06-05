@@ -23,10 +23,28 @@ const Contact = () => {
     }));
   };
 
+  const formatName = (field) => {
+    setFormData((prev) => {
+      const value = prev[field];
+      if (!value) return prev;
+      return {
+        ...prev,
+        [field]: value
+          .split(' ')
+          .map((word) =>
+            word.length > 0
+              ? word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
+              : ''
+          )
+          .join(' '),
+      };
+    });
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5000/send', formData);
+      const response = await axios.post('/send', formData);
       if (response.status === 200) {
         setFormSuccess('Your message has been sent!');
         setShowFormToast(true);
@@ -57,20 +75,12 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="
-        py-20 px-4
-        scroll-mt-24
-        bg-light-mode-gradient dark:bg-dark-mode-gradient
-        transition-colors duration-500
-        animate-fade-in
-      "
+      className="py-20 px-4 scroll-mt-24 bg-light-mode-gradient dark:bg-dark-mode-gradient transition-colors duration-500 animate-fade-in"
     >
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-start">
         {/* LEFT: Form */}
         <div ref={formRef}>
-          <h2 className="text-2xl font-bold text-gray-800 dark:text-gray-100 mb-4">
-            Get In Touch
-          </h2>
+          <h2 className="text-2xl font-bold text-gray-800 dark:text-gray-100 mb-4">Get In Touch</h2>
           <p className="text-gray-600 dark:text-gray-300 mb-6">
             Fields marked with <span className="text-red-500">*</span> are required.
           </p>
@@ -87,6 +97,7 @@ const Contact = () => {
                   name="firstName"
                   value={formData.firstName}
                   onChange={handleChange}
+                  onBlur={() => formatName('firstName')}
                   required
                   className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
@@ -101,6 +112,7 @@ const Contact = () => {
                   name="lastName"
                   value={formData.lastName}
                   onChange={handleChange}
+                  onBlur={() => formatName('lastName')}
                   required
                   className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
