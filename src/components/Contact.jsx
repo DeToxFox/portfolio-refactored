@@ -41,39 +41,40 @@ const Contact = () => {
     });
   };
 
-  // // DEPLOYMENT LIVE
-  // const backendBaseUrl = import.meta.env.PROD
-  //   ? 'https://your-deployed-backend-url.com'
-  //   : 'http://localhost:5000';
+  // DEPLOYMENT LIVE
+  const endpoint =
+  import.meta.env.MODE === 'development'
+    ? 'http://localhost:5000/send'
+    : '/.netlify/functions/send';
 
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
-  //   try {
-  //     const response = await axios.post(`${backendBaseUrl}/send`, formData);
-  //     if (response.status === 200) {
-  //       setFormSuccess('Your message has been sent!');
-  //       setShowFormToast(true);
-  //       setFormData({ firstName: '', lastName: '', email: '', message: '' });
-  //     }
-  //   } catch (err) {
-  //     console.error(err);
-  //   }
-  // };
-
-  // FOR LOCAL DEVELOPMENT AND TESTING ONLY
   const handleSubmit = async (e) => {
-  e.preventDefault();
-  try {
-    const response = await axios.post('http://localhost:5000/send', formData);
-    if (response.status === 200) {
-      setFormSuccess('Your message has been sent!');
-      setShowFormToast(true);
-      setFormData({ firstName: '', lastName: '', email: '', message: '' });
+    e.preventDefault();
+    try {
+      const response = await axios.post(endpoint, formData);
+      if (response.status === 200) {
+        setFormSuccess('Your message has been sent!');
+        setShowFormToast(true);
+        setFormData({ firstName: '', lastName: '', email: '', message: '' });
+      }
+    } catch (err) {
+      console.error(err);
     }
-  } catch (err) {
-    console.error(err);
-  }
-};
+  };
+
+//   // FOR LOCAL DEVELOPMENT AND TESTING ONLY
+//   const handleSubmit = async (e) => {
+//   e.preventDefault();
+//   try {
+//     const response = await axios.post('http://localhost:5000/send', formData);
+//     if (response.status === 200) {
+//       setFormSuccess('Your message has been sent!');
+//       setShowFormToast(true);
+//       setFormData({ firstName: '', lastName: '', email: '', message: '' });
+//     }
+//   } catch (err) {
+//     console.error(err);
+//   }
+// };
 
   const handleCopyEmail = () => {
     navigator.clipboard.writeText(emailAddress).then(() => {
