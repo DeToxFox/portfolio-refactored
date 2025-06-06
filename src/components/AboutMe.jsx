@@ -13,12 +13,12 @@ const AboutMe = () => {
                  animate-fade-in"
     >
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-10">
-        <img
+        {/* <img
           src={myPhoto}
           alt="David Turner Headshot"
           className="w-44 h-44 md:w-52 md:h-52 rounded-full object-cover
                      shadow-xl transition-transform duration-300 hover:scale-105"
-        />
+        /> */}
         <div className="text-center md:text-left">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-gray-100 mb-4">
             Hi, I’m David Turner
