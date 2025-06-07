@@ -14,8 +14,7 @@ const Hero = () => {
             <span className="text-blue-600 dark:text-blue-400">clean solutions</span>
           </h1>
           <p className="text-lg md:text-xl text-gray-700 dark:text-gray-300">
-            I’m David Turner — a collaborative Full Stack Developer with a background in business
-            analysis, a passion for clean design, and a commitment to meaningful software.
+            I’m David Turner — a Full Stack Developer with a background in business analysis. I enjoy building clean, reliable software that solves real problems and supports real people. Whether it’s a solo project or a team effort, I bring a calm, collaborative mindset and a focus on doing quality work.
           </p>
         </div>
         <div className="flex-shrink-0">

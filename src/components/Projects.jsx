@@ -3,6 +3,14 @@ import React from 'react';
 
 const projects = [
   {
+    title: "Gary’s Blue Diner (Refactor)",
+    description:
+      "Modernizing a multi-page restaurant order site with React, Tailwind CSS, and streamlined UX. Includes order confirmation logic, email summary, and a fresh payment UI.",
+    tags: ['React', 'Vite', 'Tailwind', 'JavaScript'],
+    github: 'https://github.com/DeToxFox/garys-blue-diner-refactor', // ← Replace if needed
+    note: 'Refactor in progress — enhanced layout, logic, and UI polish',
+  },
+  {
     title: 'QR Code Resume Generator',
     description:
       'A backend utility that dynamically generates resumes and QR codes linking to your portfolio.',
@@ -13,10 +21,10 @@ const projects = [
   {
     title: 'Hair Salon Website',
     description:
-      'Responsive site for a local hairstylist with booking integration. Based on Figma mockups.',
+      'A responsive multi-page website built for a real hairstylist client. Includes booking integration and is based on custom Figma mockups tailored to their brand.',
     tags: ['React', 'Vite', 'Tailwind'],
-    figma: 'https://www.figma.com/your-hair-site-preview',
-    note: 'In Progress',
+    figma: 'https://www.figma.com/your-hair-site-preview', // replace if needed
+    note: 'Live client project — currently in development',
   },
   {
     title: 'Movie Finder API',
