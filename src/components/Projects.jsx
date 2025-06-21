@@ -1,6 +1,6 @@
 // src/components/Projects.jsx
-import React from 'react';
-import { FaGithub, FaFigma, FaExternalLinkAlt } from 'react-icons/fa';
+import React, { useState } from 'react';
+import { FaGithub, FaFigma, FaExternalLinkAlt, FaSearchPlus } from 'react-icons/fa';
 import diner1 from '../assets/diner-sg-1.png';
 import diner2 from '../assets/diner-sg-2.png';
 
@@ -28,10 +28,7 @@ const projects = [
     tags: ['React', 'Vite', 'Tailwind'],
     github: 'https://github.com/DeToxFox/hair-salon-site',
     figma: 'https://www.figma.com/file/YourSalonFigmaLink',
-    images: [
-      '/images/salon-homepage.png',
-      '/images/salon-booking.png',
-    ],
+    images: [], // drop in imports as you add screenshots
     features: [
       'Custom booking form with validation',
       'Mobile-first layout across breakpoints',
@@ -61,10 +58,7 @@ const projects = [
     tags: ['React', 'Vite', 'Tailwind'],
     github: 'https://github.com/DeToxFox/portfolio-refactored',
     demo: 'https://your-portfolio.netlify.app',
-    images: [
-      '/images/portfolio-hero.png',
-      '/images/portfolio-projects.png',
-    ],
+    images: [], // drop in imports as you add screenshots
     features: [
       'Dark/light theme toggle',
       'Scroll-to-top & section animations',
@@ -75,6 +69,8 @@ const projects = [
 ];
 
 export default function Projects() {
+  const [lightboxSrc, setLightboxSrc] = useState(null);
+
   return (
     <section
       id="projects"
@@ -84,6 +80,7 @@ export default function Projects() {
         <h2 className="text-3xl font-bold text-gray-800 dark:text-gray-100 mb-8 text-center">
           Projects
         </h2>
+
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {projects.map((project, idx) => (
             <div
@@ -103,27 +100,37 @@ export default function Projects() {
             >
               {/* 1. Thumbnails */}
               {project.images.length > 0 && (
-                <div className="grid grid-cols-2 gap-2 mb-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                   {project.images.map((src, i) => (
-                    <img
+                    <div
                       key={i}
-                      src={src}
-                      alt={`${project.title} screenshot ${i + 1}`}
-                      className="w-full h-full object-cover"
-                    />
+                      className="relative group cursor-pointer overflow-hidden rounded-lg"
+                      onClick={() => setLightboxSrc(src)}
+                    >
+                      {/* Thumbnail image */}
+                      <img
+                        src={src}
+                        alt={`${project.title} screenshot ${i + 1}`}
+                        className="w-full h-auto object-cover transition-transform duration-200 group-hover:scale-105"
+                      />
+
+                      {/* Overlay container */}
+                      <div className="absolute inset-0 pointer-events-none flex items-center justify-center">
+                        {/* Background tint */}
+                        <div className="absolute inset-0 bg-black bg-opacity-10 md:bg-opacity-0 md:group-hover:bg-opacity-40 transition-colors" />
+                        {/* bg-black bg-opacity-10, NOTE: this will show on mobile an overlay shader */}
+                        {/* Magnifier icon */}
+                        <FaSearchPlus className="text-white text-3xl opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity" />
+                        {/* NOTE: opacity-100 on mobile, 0 on desktop */}
+                      </div>
+                    </div>
                   ))}
                 </div>
               )}
 
+
               {/* 2. Title */}
-              <h3
-                className="
-                  text-xl font-semibold mb-2
-                  text-gray-800 dark:text-gray-100
-                  group-hover:text-indigo-600 dark:group-hover:text-indigo-400
-                  transition-colors
-                "
-              >
+              <h3 className="text-xl font-semibold mb-2 text-gray-800 dark:text-gray-100 transition-colors group-hover:text-indigo-600 dark:group-hover:text-indigo-400">
                 {project.title}
               </h3>
 
@@ -146,12 +153,7 @@ export default function Projects() {
                 {project.tags.map((tag, i) => (
                   <span
                     key={i}
-                    className="
-                      px-2 py-1
-                      bg-indigo-100 dark:bg-indigo-900
-                      text-indigo-800 dark:text-indigo-200
-                      rounded-full text-sm
-                    "
+                    className="px-2 py-1 bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200 rounded-full text-sm"
                   >
                     {tag}
                   </span>
@@ -166,12 +168,7 @@ export default function Projects() {
                       href={project.demo}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="
-                        flex items-center
-                        text-indigo-600 dark:text-indigo-400
-                        hover:text-indigo-800 dark:hover:text-indigo-200
-                        transition-colors
-                      "
+                      className="flex items-center text-indigo-600 dark:text-indigo-400 hover:text-indigo-800 dark:hover:text-indigo-200 transition-colors"
                     >
                       <FaExternalLinkAlt className="mr-1" /> Live Demo
                     </a>
@@ -181,12 +178,7 @@ export default function Projects() {
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="
-                        flex items-center
-                        text-indigo-600 dark:text-indigo-400
-                        hover:text-indigo-800 dark:hover:text-indigo-200
-                        transition-colors
-                      "
+                      className="flex items-center text-indigo-600 dark:text-indigo-400 hover:text-indigo-800 dark:hover:text-indigo-200 transition-colors"
                     >
                       <FaGithub className="mr-1" /> Repo
                     </a>
@@ -196,12 +188,7 @@ export default function Projects() {
                       href={project.figma}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="
-                        flex items-center
-                        text-indigo-600 dark:text-indigo-400
-                        hover:text-indigo-800 dark:hover:text-indigo-200
-                        transition-colors
-                      "
+                      className="flex items-center text-indigo-600 dark:text-indigo-400 hover:text-indigo-800 dark:hover:text-indigo-200 transition-colors"
                     >
                       <FaFigma className="mr-1" /> Figma
                     </a>
@@ -217,6 +204,20 @@ export default function Projects() {
           ))}
         </div>
       </div>
+
+      {/* Lightbox modal */}
+      {lightboxSrc && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4"
+          onClick={() => setLightboxSrc(null)}
+        >
+          <img
+            src={lightboxSrc}
+            alt="Enlarged screenshot"
+            className="max-w-[90vw] max-h-[90vh] object-contain rounded-lg shadow-2xl"
+          />
+        </div>
+      )}
     </section>
   );
 }
