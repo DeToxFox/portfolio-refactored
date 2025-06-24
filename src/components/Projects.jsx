@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { FaGithub, FaFigma, FaExternalLinkAlt, FaSearchPlus } from 'react-icons/fa';
 import diner1 from '../assets/diner-sg-1.png';
 import diner2 from '../assets/diner-sg-2.png';
+import QRCode from 'react-qr-code';
 
 const projects = [
   {
@@ -44,6 +45,8 @@ const projects = [
     github: 'https://github.com/DeToxFox/qr-resume-generator',
     demo: '',    // no UI demo yet
     images: [],  // no screenshots
+    // qrValue: `${window.location.origin}/DavidTurner_DevResume.pdf`, // <-- points to public/resume.pdf
+    qrValue: '/DavidTurner_DevResume.pdf',
     features: [
       'Generates dynamic QR codes',
       'Outputs styled PDF resume',
@@ -139,7 +142,23 @@ export default function Projects() {
                 {project.description}
               </p>
 
-              {/* 4. Features list */}
+              {/* 4. QR Code preview for the Resume Generator */}
+              {project.qrValue && (
+                <div className="mt-2 mb-4 flex flex-col items-center">
+                  <QRCode
+                    value={project.qrValue}
+                    size={96}
+                    bgColor={project.darkMode ? '#1f2937' : '#fff'}
+                    fgColor={project.darkMode ? '#fff' : '#111'}
+                  />
+                  <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
+                    Scan to view the resume
+                  </p>
+                </div>
+              )}
+
+
+              {/* 5. Features list */}
               {project.features.length > 0 && (
                 <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 mb-4">
                   {project.features.map((feat, i) => (
@@ -148,7 +167,7 @@ export default function Projects() {
                 </ul>
               )}
 
-              {/* 5. Tags */}
+              {/* 6. Tags */}
               <div className="flex flex-wrap gap-2 mb-4">
                 {project.tags.map((tag, i) => (
                   <span
@@ -160,7 +179,7 @@ export default function Projects() {
                 ))}
               </div>
 
-              {/* 6. Links & Demo */}
+              {/* 7. Links & Demo */}
               <div className="mt-auto flex flex-wrap items-center justify-between">
                 <div className="flex space-x-4">
                   {project.demo && (
