@@ -6,6 +6,7 @@ import AboutMe from './components/AboutMe';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import Skills from './components/Skills';
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -27,6 +28,7 @@ const MainContent = () => {
       {/* Key added to re-trigger animation on navigation */}
       <Hero key={location.pathname} />
       <AboutMe />
+      <Skills />
       <Projects />
       <Contact />
       <Footer />
