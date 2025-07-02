@@ -126,19 +126,21 @@ export default function Projects() {
                       <div className="w-full flex flex-col items-center">
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-3 w-full max-w-xs mx-auto md:max-w-[260px] md:mx-auto">
                           {project.images.map((img, i) => (
-                            <div
-                              key={i}
-                              className="relative group cursor-pointer overflow-hidden rounded-lg w-full"
-                              onClick={() => setLightboxSrc(img)}
-                            >
-                              <img
-                                src={img}
-                                alt={`${project.title} thumbnail ${i + 1}`}
-                                className="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-105 max-h-32 md:max-h-24"
-                              />
-                              <div className="absolute inset-0 pointer-events-none flex items-center justify-center">
-                                <div className="absolute inset-0 bg-black bg-opacity-10 md:bg-opacity-0 md:group-hover:bg-opacity-40 transition-colors" />
-                                <FaSearchPlus className="text-white text-2xl opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity" />
+                            <div key={i} className="flex justify-center md:block">
+                              <div
+                                className="relative group cursor-pointer overflow-hidden rounded-lg"
+                                onClick={() => setLightboxSrc(img)}
+                                style={{ width: '160px', maxWidth: '90vw' }}
+                              >
+                                <img
+                                  src={img}
+                                  alt={`${project.title} thumbnail ${i + 1}`}
+                                  className="object-cover transition-transform duration-300 group-hover:scale-105 w-40 h-auto md:w-full max-h-32 md:max-h-24"
+                                />
+                                <div className="absolute inset-0 pointer-events-none flex items-center justify-center">
+                                  <div className="absolute inset-0 bg-black bg-opacity-10 md:bg-opacity-0 md:group-hover:bg-opacity-40 transition-colors" />
+                                  <FaSearchPlus className="text-white text-2xl opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity" />
+                                </div>
                               </div>
                             </div>
                           ))}
@@ -148,19 +150,21 @@ export default function Projects() {
                       <div className="w-full flex flex-col items-center">
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-3 w-full max-w-xs mx-auto md:max-w-[260px] md:mx-auto">
                           {project.images.map((img, i) => (
-                            <div
-                              key={i}
-                              className="relative group cursor-pointer overflow-hidden rounded-lg w-full"
-                              onClick={() => setLightboxSrc(img)}
-                            >
-                              <img
-                                src={img}
-                                alt={`${project.title} thumbnail ${i + 1}`}
-                                className="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-105 max-h-32 md:max-h-24"
-                              />
-                              <div className="absolute inset-0 pointer-events-none flex items-center justify-center">
-                                <div className="absolute inset-0 bg-black bg-opacity-10 md:bg-opacity-0 md:group-hover:bg-opacity-40 transition-colors" />
-                                <FaSearchPlus className="text-white text-2xl opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity" />
+                            <div key={i} className="flex justify-center md:block">
+                              <div
+                                className="relative group cursor-pointer overflow-hidden rounded-lg"
+                                onClick={() => setLightboxSrc(img)}
+                                style={{ width: '160px', maxWidth: '90vw' }}
+                              >
+                                <img
+                                  src={img}
+                                  alt={`${project.title} thumbnail ${i + 1}`}
+                                  className="object-cover transition-transform duration-300 group-hover:scale-105 w-40 h-auto md:w-full max-h-32 md:max-h-24"
+                                />
+                                <div className="absolute inset-0 pointer-events-none flex items-center justify-center">
+                                  <div className="absolute inset-0 bg-black bg-opacity-10 md:bg-opacity-0 md:group-hover:bg-opacity-40 transition-colors" />
+                                  <FaSearchPlus className="text-white text-2xl opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity" />
+                                </div>
                               </div>
                             </div>
                           ))}
