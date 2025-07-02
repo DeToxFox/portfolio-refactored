@@ -124,7 +124,7 @@ export default function Projects() {
                   <div className="flex flex-col items-center justify-center w-full" style={{height: '120px'}}>
                     {project.title === "Gary Blue's Diner (Refactor)" && project.images.length > 0 ? (
                       <div className="w-full flex flex-col items-center">
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 w-full max-w-[260px] mx-auto">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 w-full max-w-xs mx-auto md:max-w-[260px] md:mx-auto">
                           {project.images.map((img, i) => (
                             <div
                               key={i}
@@ -134,7 +134,7 @@ export default function Projects() {
                               <img
                                 src={img}
                                 alt={`${project.title} thumbnail ${i + 1}`}
-                                className="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-105 max-h-24"
+                                className="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-105 max-h-32 md:max-h-24"
                               />
                               <div className="absolute inset-0 pointer-events-none flex items-center justify-center">
                                 <div className="absolute inset-0 bg-black bg-opacity-10 md:bg-opacity-0 md:group-hover:bg-opacity-40 transition-colors" />
@@ -146,7 +146,7 @@ export default function Projects() {
                       </div>
                     ) : project.title === "Hair Salon Website" && project.images.length > 0 ? (
                       <div className="w-full flex flex-col items-center">
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 w-full max-w-[260px] mx-auto">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 w-full max-w-xs mx-auto md:max-w-[260px] md:mx-auto">
                           {project.images.map((img, i) => (
                             <div
                               key={i}
@@ -156,7 +156,7 @@ export default function Projects() {
                               <img
                                 src={img}
                                 alt={`${project.title} thumbnail ${i + 1}`}
-                                className="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-105 max-h-24"
+                                className="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-105 max-h-32 md:max-h-24"
                               />
                               <div className="absolute inset-0 pointer-events-none flex items-center justify-center">
                                 <div className="absolute inset-0 bg-black bg-opacity-10 md:bg-opacity-0 md:group-hover:bg-opacity-40 transition-colors" />
