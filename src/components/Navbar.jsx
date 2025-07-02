@@ -22,8 +22,8 @@ const Navbar = () => {
         <ul className="flex items-center space-x-6 text-black dark:text-white">
           <li><a href="#top" className="hover:text-blue-600">Home</a></li>
           <li><a href="#about" className="hover:text-blue-600">About Me</a></li>
-          <li><a href="#projects" className="hover:text-blue-600">Projects</a></li>
           <li><a href="#skills" className="hover:text-blue-600">Skills</a></li>
+          <li><a href="#projects" className="hover:text-blue-600">Projects</a></li>
           <li><a href="#contact" className="hover:text-blue-600">Contact</a></li>
           <li className="flex items-center"><ThemeToggle /></li>
         </ul>
