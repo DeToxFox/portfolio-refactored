@@ -121,54 +121,50 @@ export default function Projects() {
                 {/* Card content as flex column for top alignment */}
                 <div className="flex flex-col h-full w-full">
                   {/* 1. Fixed-height image/QR area */}
-                  <div className="flex flex-col items-center justify-center w-full" style={{height: '120px'}}>
+                  <div className="w-full flex flex-col items-center justify-center overflow-hidden h-32 md:h-[120px]">
                     {project.title === "Gary Blue's Diner (Refactor)" && project.images.length > 0 ? (
-                      <div className="w-full flex flex-col items-center">
-                        <div className="flex flex-col items-center md:grid md:grid-cols-2 gap-3 w-full max-w-xs mx-auto md:max-w-[260px] md:mx-auto">
-                          {project.images.map((img, i) => (
-                            <div key={i} className="flex justify-center md:block">
-                              <div
-                                className="relative group cursor-pointer overflow-hidden rounded-lg"
-                                onClick={() => setLightboxSrc(img)}
-                                style={{ width: '160px', maxWidth: '90vw' }}
-                              >
-                                <img
-                                  src={img}
-                                  alt={`${project.title} thumbnail ${i + 1}`}
-                                  className="object-cover transition-transform duration-300 group-hover:scale-105 w-40 h-auto md:w-full max-h-32 md:max-h-24"
-                                />
-                                <div className="absolute inset-0 pointer-events-none flex items-center justify-center">
-                                  <div className="absolute inset-0 bg-black bg-opacity-10 md:bg-opacity-0 md:group-hover:bg-opacity-40 transition-colors" />
-                                  <FaSearchPlus className="text-white text-2xl opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity" />
-                                </div>
+                      <div className="w-full flex flex-col items-center md:grid md:grid-cols-2 gap-2 md:gap-3 max-w-xs mx-auto md:max-w-[260px] md:mx-auto">
+                        {project.images.map((img, i) => (
+                          <div key={i} className="flex-1 flex justify-center md:block">
+                            <div
+                              className="relative group cursor-pointer overflow-hidden rounded-lg"
+                              onClick={() => setLightboxSrc(img)}
+                              style={{ width: '100px', maxWidth: '90vw' }}
+                            >
+                              <img
+                                src={img}
+                                alt={`${project.title} thumbnail ${i + 1}`}
+                                className="object-cover transition-transform duration-300 group-hover:scale-105 w-24 h-16 md:w-full md:h-auto max-h-16 md:max-h-24"
+                              />
+                              <div className="absolute inset-0 pointer-events-none flex items-center justify-center">
+                                <div className="absolute inset-0 bg-black bg-opacity-10 md:bg-opacity-0 md:group-hover:bg-opacity-40 transition-colors" />
+                                <FaSearchPlus className="text-white text-2xl opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity" />
                               </div>
                             </div>
-                          ))}
-                        </div>
+                          </div>
+                        ))}
                       </div>
                     ) : project.title === "Hair Salon Website" && project.images.length > 0 ? (
-                      <div className="w-full flex flex-col items-center">
-                        <div className="flex flex-col items-center md:grid md:grid-cols-2 gap-3 w-full max-w-xs mx-auto md:max-w-[260px] md:mx-auto">
-                          {project.images.map((img, i) => (
-                            <div key={i} className="flex justify-center md:block">
-                              <div
-                                className="relative group cursor-pointer overflow-hidden rounded-lg"
-                                onClick={() => setLightboxSrc(img)}
-                                style={{ width: '160px', maxWidth: '90vw' }}
-                              >
-                                <img
-                                  src={img}
-                                  alt={`${project.title} thumbnail ${i + 1}`}
-                                  className="object-cover transition-transform duration-300 group-hover:scale-105 w-40 h-auto md:w-full max-h-32 md:max-h-24"
-                                />
-                                <div className="absolute inset-0 pointer-events-none flex items-center justify-center">
-                                  <div className="absolute inset-0 bg-black bg-opacity-10 md:bg-opacity-0 md:group-hover:bg-opacity-40 transition-colors" />
-                                  <FaSearchPlus className="text-white text-2xl opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity" />
-                                </div>
+                      <div className="w-full flex flex-col items-center md:grid md:grid-cols-2 gap-2 md:gap-3 max-w-xs mx-auto md:max-w-[260px] md:mx-auto">
+                        {project.images.map((img, i) => (
+                          <div key={i} className="flex-1 flex justify-center md:block">
+                            <div
+                              className="relative group cursor-pointer overflow-hidden rounded-lg"
+                              onClick={() => setLightboxSrc(img)}
+                              style={{ width: '100px', maxWidth: '90vw' }}
+                            >
+                              <img
+                                src={img}
+                                alt={`${project.title} thumbnail ${i + 1}`}
+                                className="object-cover transition-transform duration-300 group-hover:scale-105 w-24 h-16 md:w-full md:h-auto max-h-16 md:max-h-24"
+                              />
+                              <div className="absolute inset-0 pointer-events-none flex items-center justify-center">
+                                <div className="absolute inset-0 bg-black bg-opacity-10 md:bg-opacity-0 md:group-hover:bg-opacity-40 transition-colors" />
+                                <FaSearchPlus className="text-white text-2xl opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity" />
                               </div>
                             </div>
-                          ))}
-                        </div>
+                          </div>
+                        ))}
                       </div>
                     ) : project.title === "Portfolio Website (Refactored)" ? (
                       <div className="w-full flex flex-col items-center">
