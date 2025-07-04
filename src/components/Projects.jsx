@@ -124,7 +124,7 @@ export default function Projects() {
                   <div className="flex flex-col items-center justify-center w-full" style={{height: '120px'}}>
                     {project.title === "Gary Blue's Diner (Refactor)" && project.images.length > 0 ? (
                       <div className="w-full flex flex-col items-center">
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 w-full max-w-xs mx-auto md:max-w-[260px] md:mx-auto">
+                        <div className="flex flex-col items-center md:grid md:grid-cols-2 gap-3 w-full max-w-xs mx-auto md:max-w-[260px] md:mx-auto">
                           {project.images.map((img, i) => (
                             <div key={i} className="flex justify-center md:block">
                               <div
@@ -148,7 +148,7 @@ export default function Projects() {
                       </div>
                     ) : project.title === "Hair Salon Website" && project.images.length > 0 ? (
                       <div className="w-full flex flex-col items-center">
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 w-full max-w-xs mx-auto md:max-w-[260px] md:mx-auto">
+                        <div className="flex flex-col items-center md:grid md:grid-cols-2 gap-3 w-full max-w-xs mx-auto md:max-w-[260px] md:mx-auto">
                           {project.images.map((img, i) => (
                             <div key={i} className="flex justify-center md:block">
                               <div
