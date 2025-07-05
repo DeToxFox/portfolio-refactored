@@ -334,13 +334,13 @@ export default function Projects() {
       {/* Lightbox modal */}
       {lightboxSrc && (
         <div
-          className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4"
+          className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-2 sm:p-4"
           onClick={() => setLightboxSrc(null)}
         >
           <img
             src={lightboxSrc}
             alt="Enlarged screenshot"
-            className="max-w-[90vw] max-h-[90vh] object-contain rounded-lg shadow-2xl"
+            className="w-full max-w-[95vw] max-h-[70vh] sm:max-w-[90vw] sm:max-h-[90vh] object-contain rounded-lg shadow-2xl mx-auto"
           />
         </div>
       )}

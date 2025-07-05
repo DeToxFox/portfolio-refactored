@@ -116,7 +116,7 @@ export default function Skills() {
         <p className="text-xl text-gray-600 dark:text-gray-300 mb-6 text-center max-w-2xl mx-auto">
           A summary of my technical expertise, tools, and methodologies—spanning full stack development, cloud, collaboration, and business analysis.
         </p>
-        <div className="grid grid-cols-[repeat(3,minmax(280px,1fr))] gap-y-14 gap-x-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-14 gap-x-16">
           {skillBadges.map((group, idx) => (
             <div key={group.category} className="flex flex-col items-start mb-10">
               <h3 className="text-xl font-semibold mb-5 text-gray-800 dark:text-gray-200 tracking-wide">
