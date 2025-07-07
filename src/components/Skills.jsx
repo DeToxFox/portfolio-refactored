@@ -2,6 +2,54 @@ import React from 'react';
 import { FaPython, FaJava, FaJs, FaHtml5, FaCss3Alt, FaReact, FaNodeJs, FaDatabase, FaGithub, FaAws, FaCloud, FaTrello, FaJira, FaFigma, FaShieldAlt, FaUsers, FaSync, FaChartBar, FaTasks, FaUserCog } from 'react-icons/fa';
 import { SiMongodb, SiPostgresql, SiMysql, SiTailwindcss, SiVite, SiExpress, SiJest, SiNetlify, SiRealm, SiDotenv } from 'react-icons/si';
 
+const brandColors = {
+  Python: "#3776AB",
+  Java: "#007396",
+  JavaScript: "#F7DF1E",
+  HTML5: "#E34F26",
+  CSS3: "#1572B6",
+  "Tailwind CSS": "#38BDF8",
+  "React.js": "#61DAFB",
+  "React Native": "#61DAFB",
+  "Node.js": "#339933",
+  Express: "#000000",
+  Jest: "#C21325",
+  Vite: "#646CFF",
+  MySQL: "#4479A1",
+  PostgreSQL: "#336791",
+  MongoDB: "#47A248",
+  Realm: "#39477F",
+  GitHub: "#181717",
+  "Azure DevOps": "#0078D7",
+  Jira: "#0052CC",
+  Figma: "#F24E1E",
+  Trello: "#0079BF",
+  Postman: "#FF6C37",
+  ZOHO: "#C8202F",
+  "MS Excel": "#217346",
+  AWS: "#FF9900",
+  Citrix: "#0085D1",
+  SharePoint: "#0078D4",
+  Netlify: "#00C7B7",
+  "OAuth 2.0": "#F7B93E",
+  "Microsoft Graph API": "#0078D4",
+  "Azure Active Directory": "#0078D4",
+  dotenv: "#8EC13F",
+  "qrcode library": "#F7DF1E",
+  "Agile/Scrum": "#E34F26",
+  "Safe Agile": "#E34F26",
+  "Change Mgmt": "#E34F26",
+  "Risk Mitigation": "#E34F26",
+  "Requirements Gathering": "#6B7280",
+  "Workflow Mapping": "#6B7280",
+  "Data Reporting": "#6B7280",
+  "Stakeholder Mgmt": "#6B7280",
+  "Process Optimization": "#6B7280",
+  "RFP/Bid Response": "#6B7280",
+  "Risk Identification": "#6B7280",
+  "Data Cleansing": "#6B7280"
+};
+
 const skillBadges = [
   {
     category: 'Programming Languages',
@@ -95,7 +143,7 @@ const skillBadges = [
   },
   {
     category: 'Other',
-    color: 'bg-yellow-400 text-gray-900',
+    color: 'bg-yellow-600',
     items: [
       { icon: FaShieldAlt, label: 'OAuth 2.0' },
       { icon: FaCloud, label: 'Microsoft Graph API' },
@@ -130,8 +178,10 @@ export default function Skills() {
                       key={item.label}
                       className={`inline-flex items-center gap-3 px-5 py-3 rounded-full text-lg font-semibold shadow-sm ${group.color} dark:${group.color}`}
                     >
-                      <Icon className="text-xl" />
-                      {item.label}
+                      <span className="flex items-center justify-center w-11 h-11 rounded-full bg-neutral-badge">
+                        <Icon color={brandColors[item.label]} size={22} />
+                      </span>
+                      <span className="text-white drop-shadow">{item.label}</span>
                     </span>
                   );
                 })}

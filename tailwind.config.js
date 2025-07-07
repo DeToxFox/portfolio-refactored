@@ -6,7 +6,11 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}"
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'neutral-badge': '#525252',
+      },
+    },
   },
   plugins: [
     require('@tailwindcss/forms'),
